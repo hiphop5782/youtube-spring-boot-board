@@ -36,7 +36,7 @@
 </table>
 
 <h2><a href="./">목록으로</a></h2>
-<h2><a href="edit?no=${board.no}">수정하기</a></h2>
-<h2><a href="delete?no=${board.no}">삭제하기</a></h2>
+<h2><a href="password/edit/${board.no}">수정하기</a></h2>
+<h2><a href="password/delete/${board.no}">삭제하기</a></h2>
 
 

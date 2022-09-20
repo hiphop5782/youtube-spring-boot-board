@@ -28,6 +28,9 @@ public class Board {
 	@Column(length = 60)
 	private String writer;
 	
+	@Column(length = 20)
+	private String password;
+	
 	@Column(length = 300)
 	private String title;
 	

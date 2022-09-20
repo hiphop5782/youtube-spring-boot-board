@@ -6,6 +6,16 @@
 
 <h2><a href="write">글쓰기</a></h2>
 
+<form method="get">
+	<input type="text" name="no" placeholder="번호" value="${boardDto.no}"><br>
+	<input type="text" name="title" placeholder="제목" value="${boardDto.title}"><br>
+	<input type="text" name="writer" placeholder="작성자" value="${boardDto.writer}"><br>
+	<input type="text" name="content" placeholder="내용" value="${boardDto.content}"><br>
+	<input type="date" name="begin" value="${boardDto.begin}">~
+	<input type="date" name="end" value="${boardDto.end}"><br>
+	<button type="submit">검색</button>
+</form>
+
 <table border="1" width="600">
 	<thead>
 		<tr>

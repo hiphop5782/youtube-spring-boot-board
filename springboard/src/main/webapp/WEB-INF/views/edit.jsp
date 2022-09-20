@@ -7,5 +7,6 @@
 	<input type="text" name="title" value="${board.title}" required><br><br>
 	<input type="text" name="writer" value="${board.writer}" required><br><br>
 	<textarea name="content" rows="10" cols="60" required>${board.content}</textarea><br><br>
+	<input type="password" name="password" placeholder="비밀번호" required><br><br>
 	<button type="submit">수정</button>
 </form>
