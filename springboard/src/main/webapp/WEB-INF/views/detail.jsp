@@ -48,8 +48,13 @@
 			<hr>
 			<a href="write" class="btn btn-primary">글쓰기</a>
 			<a href="write" class="btn btn-success">답글쓰기</a>
-			<a href="edit?no=${board.no}" class="btn btn-warning">수정</a>
-			<a href="delete?no=${board.no}" class="btn btn-danger">삭제</a>
+			
+			<!-- 
+				수정과 삭제가 password 페이지를 거쳐서 갈 수 있도록 링크 수정
+				- 주소는 /password/edit 또는 delete/번호 형태로 경로 변수 처리 
+			-->
+			<a href="password/edit/${board.no}" class="btn btn-warning">수정</a>
+			<a href="password/delete/${board.no}" class="btn btn-danger">삭제</a>
 			<a href="./" class="btn btn-dark">목록</a>
 		</div>
 	</div>
