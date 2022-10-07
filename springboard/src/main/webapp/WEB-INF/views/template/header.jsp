@@ -32,7 +32,7 @@
 			          		</a>
 			        	</li>
 			        	<li class="nav-item">
-			         		<a class="nav-link" href="#">Board</a>
+			         		<a class="nav-link" href="${pageContext.request.contextPath}">Board</a>
 			        	</li>
 				        <li class="nav-item">
 							<a class="nav-link" href="#">About</a>
