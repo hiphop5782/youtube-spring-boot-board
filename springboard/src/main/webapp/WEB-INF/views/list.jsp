@@ -129,6 +129,9 @@
 						<th>작성자</th>
 						<th>작성일</th>
 						<th>조회수</th>
+						<th>grp</th>
+						<th>seq</th>
+						<th>dep</th>
 					</tr>
 				</thead>
 				<tbody class="text-center">
@@ -136,6 +139,14 @@
 					<tr>
 						<td>${board.no}</td>
 						<td class="text-start">
+							<c:if test="${board.dep > 0}">
+								<!-- 답글 차수(dep)만큼 띄어쓰기 추가 -->
+								<c:forEach var="i" begin="1" end="${board.dep}">
+									&nbsp;&nbsp;
+								</c:forEach>
+								<!-- 답글에 아이콘 추가 -->
+								<i class="fa-solid fa-reply fa-rotate-180"></i>
+							</c:if>
 							<a href="detail?no=${board.no}">
 								${board.title}
 							</a>
@@ -143,6 +154,9 @@
 						<td>${board.writer}</td>
 						<td>${board.writeTime}</td>
 						<td>${board.readcount}</td>
+						<td>${board.grp}</td>
+						<td>${board.seq}</td>
+						<td>${board.dep}</td>
 					</tr>
 					</c:forEach>
 				</tbody>
