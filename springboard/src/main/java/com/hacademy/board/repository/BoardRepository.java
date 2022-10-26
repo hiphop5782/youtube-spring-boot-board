@@ -30,5 +30,5 @@ public interface BoardRepository extends JpaRepository<Board, Long>, JpaSpecific
 	@Transactional
 	@Query("update Board b set b.seq = b.seq - 1 where b.grp = :#{#board.grp} and b.seq >= :#{#board.seq}")
 	int decreaseSequence(Board board);
-	
+
 }
