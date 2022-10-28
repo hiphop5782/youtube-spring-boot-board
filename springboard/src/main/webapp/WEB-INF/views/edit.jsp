@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	
-	<form method="post">
+	<form method="post" class="board-form">
 	<input type="hidden" name="no" value="${board.no}">
 	
 	<div class="row mt-4">

@@ -38,7 +38,8 @@
 	<!-- 게시글 내용 -->
 	<div class="row mt-4" style="min-height:350px;">
 		<div class="col-md-10 offset-md-1">
-			<pre>${board.content}</pre>
+			<!-- 에디터를 적용했으므로 pre 제거 -->
+			${board.content}
 		</div>
 	</div>
 	
