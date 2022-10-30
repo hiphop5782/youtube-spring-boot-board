@@ -1,66 +1,46 @@
 package com.hacademy.board.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//댓글 Entity
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
-@Entity @Table(name = "BOARD")
-public class Board {
+@Entity @Table(name="REPLY")
+public class Reply {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long no;
 	
-	@Column(length = 60)
+	@Column
 	private String writer;
-	
-	@Column(length = 300)
-	private String title;
 	
 	@Column @Lob
 	private String content;
 	
-	@Column(length = 20)
-	private String password;
-	
-	@Column
-	private int readcount;
-	
 	@CreationTimestamp
-	private Date writeTime;
+	private Timestamp writeTime;
 	
-	@UpdateTimestamp
-	private Date editTime;
-	
-	//계층형 게시판을 위한 상태값
-	@Column
-	private Long grp;
-	
-	@Column
-	private long seq, dep;
-	
-	//댓글 개수 확인용 컬럼
-	//- 조인을 해도 셀 수 있지만 성능상의 이점을 가지기 위해 별도의 컬럼을 설정
-	@Column
-	private long replyCount;
+	//게시글과 n:1관계 설정 및 삭제 시 자동 소멸 처리
+	//외래키 컬렴명을 board_no로 설정
+	@ManyToOne(targetEntity = Board.class, cascade = CascadeType.REMOVE)
+	@JoinColumn(name = "board_no")
+	private Board board;
 	
 }
-
-
-
-
-

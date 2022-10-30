@@ -150,6 +150,10 @@
 							<a href="detail?no=${board.no}">
 								${board.title}
 							</a>
+							<!-- 댓글 개수 추가 표시 -->
+							<c:if test="${board.replyCount > 0}">
+								[${board.replyCount}]
+							</c:if>
 						</td>
 						<td>${board.writer}</td>
 						<td>${board.writeTime}</td>
